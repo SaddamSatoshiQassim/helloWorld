@@ -1,17 +1,9 @@
 name: docker
-
-on:
-  push:
-    
+on: push
 jobs:
   docker:
-
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
     steps:
-    - uses: actions/checkout@v4
-    - run: Hello-World
-    - run: bash container.sh
+      - uses: actions/checkout@v4
+      - run: docker run hello-world  
+      - run: bash container.sh 
